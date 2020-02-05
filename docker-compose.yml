@@ -1,0 +1,67 @@
+#db:
+#  image: postgres:alpine
+#  env_file: config/env.secret
+#  volumes:
+#    - .:/usr/src/app
+#  ports:
+#    - "127.0.0.1:5432:5432"
+nginx:
+  image: nginx
+  restart: always
+  build: ./config/nginx/
+  ports:
+    - "80:80"
+    - "443:443"
+  volumes:
+    - ./config/nginx/sites-enabled/:/etc/nginx/
+  volumes_from:
+    - backend
+    - frontend
+  links:
+    - backend:backend
+    - frontend:frontend
+#redis:
+#  restart: always
+#  image: redis:4.0
+#  ports:
+#    - "6379:6379"
+
+frontend:
+#  restart: always
+  build: frontend
+  dockerfile: Dockerfile
+  expose:
+    - "3000"
+  volumes:
+    - ./frontend:/usr/src/frontend
+  links:
+    - backend:backend
+  command: npm start
+
+backend:
+#  restart: always
+  build: backend
+  dockerfile: Dockerfile
+  expose:
+    - "8000"
+  env_file: config/env.secret
+  volumes:
+    - ./backend:/usr/src/backend
+    - ./config:/usr/src/backend/config
+#  links:
+#    - redis:redis
+#    - celery:celery
+#    - db:db
+  command: ./config/uwsgi/init.sh
+
+#celery:
+#  restart: always
+#  build: .
+#  dockerfile: Dockerfile
+#  command: celery -A app worker -l info -f ./log/celery.log
+#  volumes:
+#    - .:/usr/src/app
+#  env_file: config/env.secret
+#  links:
+#    - redis:redis
+#    - db:db
