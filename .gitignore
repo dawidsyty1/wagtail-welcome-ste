@@ -1,0 +1,7 @@
+**/*.pyc
+.idea
+log
+venv
+frontend/node_modules
+backend/static
+backend/config
