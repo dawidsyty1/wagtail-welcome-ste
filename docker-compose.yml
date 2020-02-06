@@ -5,20 +5,20 @@
 #    - .:/usr/src/app
 #  ports:
 #    - "127.0.0.1:5432:5432"
-nginx:
-  image: nginx:alpine
-  restart: always
-  ports:
-    - "80:80"
-    - "443:443"
-  volumes:
-    - ./config/nginx/sites-enabled/:/etc/nginx/
-  volumes_from:
-    - backend
-    - frontend
-  links:
-    - backend:backend
-    - frontend:frontend
+#nginx:
+#  image: nginx:alpine
+#  restart: always
+#  ports:
+#    - "80:80"
+#    - "443:443"
+#  volumes:
+#    - ./config/nginx/sites-enabled/:/etc/nginx/
+#  volumes_from:
+#    - backend
+#    - frontend
+#  links:
+#    - backend:backend
+#    - frontend:frontend
 #redis:
 #  restart: always
 #  image: redis:4.0

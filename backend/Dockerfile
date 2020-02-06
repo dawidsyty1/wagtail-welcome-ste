@@ -31,4 +31,4 @@ RUN pip3 install --upgrade pip
 # USER wagtail
 #
 # EXPOSE 8000
-# CMD exec gunicorn welcome_site.wsgi:application --bind 0.0.0.0:8000 --workers 3
+# CMD exec gunicorn configuration.wsgi:application --bind 0.0.0.0:8000 --workers 3
