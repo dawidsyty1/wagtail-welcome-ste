@@ -4,10 +4,10 @@ import '../static/css/style.css'
 import WelcomeText from '../components/WelcomeText'
 
 class HomeSlider extends Component {
-  render() {
+  render(props) {
     return (
 		
-		<div class="home-slider  owl-carousel" id="home-section">
+		<div class="home-slider  owl-carousel" id={this.props.section}>
 	      <div class="slider-item ">
 	        <div class="container hero">
 	          <div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end" data-scrollax-parent="true">

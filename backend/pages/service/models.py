@@ -6,7 +6,7 @@ from wagtail.api import APIField
 
 
 # Create your models here.
-class AboutPage(BasePage):
+class ServicePage(BasePage):
     parent_page_types = None
     intro = models.CharField(max_length=250)
     body_1 = models.CharField(max_length=2000)
@@ -26,6 +26,5 @@ class AboutPage(BasePage):
         FieldPanel('intro'),
         FieldPanel('body_1'),
         FieldPanel('body_2'),
-
     ]
 

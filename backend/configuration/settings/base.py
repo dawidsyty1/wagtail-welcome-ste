@@ -24,12 +24,6 @@ BASE_DIR = os.path.dirname(PROJECT_DIR)
 # Application definition
 
 INSTALLED_APPS = [
-    'api',
-    'pages',
-    'pages.welcome',
-    'pages.about_me',
-    'search',
-
     'wagtail.contrib.forms',
     'wagtail.contrib.redirects',
     'wagtail.embeds',
@@ -52,7 +46,15 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'corsheaders',
-    'rest_framework'
+    'rest_framework',
+    'api',
+    'pages',
+    'pages.welcome',
+    'pages.about_me',
+    'pages.contact',
+    'pages.service',
+    'pages.skill',
+    'search',
 ]
 
 MIDDLEWARE = [
@@ -75,7 +77,9 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(PROJECT_DIR, 'templates'),
+            # os.path.join(PROJECT_DIR, 'templates'),
+            os.path.join(BASE_DIR, 'templates'),
+
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -151,6 +155,7 @@ STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesSto
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
+
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'

@@ -45,7 +45,7 @@ const ContactImage = () => (
 class Contact extends Component {
   render() {
     return (
-		<div class="container ftco-section contact-section ftco-no-pb" id="contact-section">
+		<div class="container ftco-section contact-section ftco-no-pb" id={this.props.section}>
         <ContactIntroduction/>
 
 

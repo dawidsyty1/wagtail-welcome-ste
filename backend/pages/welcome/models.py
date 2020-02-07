@@ -1,17 +1,17 @@
 from django.db import models
-
-from wagtail.core.models import Page
+from pages.models import BasePage
 from wagtail.admin.edit_handlers import FieldPanel, InlinePanel, StreamFieldPanel
 from wagtail.search import index
 from wagtail.api import APIField
 
 
 # Create your models here.
-class WelcomePage(Page):
+class WelcomePage(BasePage):
+    parent_page_types = None
     intro = models.CharField(max_length=250)
     body = models.CharField(max_length=2000)
 
-    search_fields = Page.search_fields + [
+    search_fields = BasePage.search_fields + [
         index.SearchField('intro'),
     ]
 
@@ -20,10 +20,9 @@ class WelcomePage(Page):
         APIField('body'),
     ]
 
-    content_panels = Page.content_panels + [
+    content_panels = BasePage.content_panels + [
         FieldPanel('intro'),
         FieldPanel('body'),
 
     ]
-
 
