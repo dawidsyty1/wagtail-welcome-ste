@@ -1,18 +1,21 @@
 import React, { Component } from 'react';
+
 import './App.css';
 import './static/css/style.css'
+import './static/css/flaticon.css'
+import './static/css/animate.css'
 import Navbar from './components/navbar/Navbar'
-import HomeSlider from './components/HomeSlider'
-import AboutMe from './components/AboutMe'
-import Skills from './components/Skills'
-import Contact from './components/Contact'
-import Footer from './components/Footer'
-import ServicesList from './components/ServicesList'
-
+import Welcome from './components/welcome/Welcome'
+import AboutMe from './components/about/AboutMe'
+import Skills from './components/skills/Skills'
+import Contact from './components/contact/Contact'
+import Footer from './components/footer/Footer'
+import Spinner from './components/spinner/Spinner'
 
 class App extends Component {
   state = {
-    pages: null
+    pages: null,
+    mounted:false
   };
 
   renderAllPages(pages){
@@ -20,9 +23,9 @@ class App extends Component {
         return null;
     }
 
-    let table  = pages.map((page) => {
+    let table = pages.map((page) => {
        if(page.page_type === "welcomepage"){
-          return <HomeSlider section={page.slug}/>
+          return <Welcome section={page.slug}/>
         } else if(page.page_type === "aboutpage") {
           return <AboutMe section={page.slug}/>
         } else if(page.page_type === "skillpage") {
@@ -32,6 +35,8 @@ class App extends Component {
         }
        return ""        
     });
+    table.push( <Navbar pages={this.state.pages}/>)
+    table.push( <Footer/>)
     return table
   }
   componentWillMount() {
@@ -40,16 +45,23 @@ class App extends Component {
         .then(res => res.json())
         .then((data) => {
           this.setState({ pages: data })
-          console.log("Pages", this.state.pages)
+          this.setState({ mounted:true })
         })
-        .catch(console.log)
-  }
+        .catch(console.log("Eror"))
+  };
+
+  getPagesContent() {
+    if(this.state.mounted === true) {
+      return this.renderAllPages(this.state.pages)
+    }
+    return <Spinner/>;
+  };
+
+
   render() {
     return (
       <div>
-      <Navbar pages={this.state.pages}/>
-      {this.renderAllPages(this.state.pages)}
-      <Footer/> 
+        {this.getPagesContent()}
       </div>
     );
   }

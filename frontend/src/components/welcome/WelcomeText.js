@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../static/css/style.css'
 
 class WelcomeText extends Component {
   render() {

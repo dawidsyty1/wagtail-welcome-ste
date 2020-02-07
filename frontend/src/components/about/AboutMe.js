@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import '../static/css/style.css'
-import '../static/css/flaticon.css'
-import about_image from '../static/images/about-1.jpg'
+
+
+import about_image from '../../static/images/about-1.jpg'
 
 const AboutMeImage = () => (
 	<div class="col-md-6 col-lg-5 d-flex">

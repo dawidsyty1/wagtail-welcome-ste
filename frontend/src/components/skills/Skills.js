@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
-import '../static/css/style.css'
-import '../static/css/flaticon.css'
-import Skill from '../components/Skill'
-import ServicesList from '../components/ServicesList'
+import Skill from './Skill'
+import ServicesList from './ServicesList'
 
 const SkillsIntroduction = () => (
 	<div class="row justify-content-center pb-5">

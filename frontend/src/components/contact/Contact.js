@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import '../static/css/style.css'
-import '../static/css/flaticon.css'
-import aboutImage from '../static/images/about.jpg'
+import aboutImage from '../../static/images/about.jpg'
 
 const ContactIntroduction = () => (
   <div class="row justify-content-center mb-5 pb-3">

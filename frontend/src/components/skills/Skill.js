@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 import ProgressBar from 'react-bootstrap/ProgressBar'
-import '../static/css/style.css'
-import '../static/css/flaticon.css'
-import '../static/css/animate.css'
 
 class Skill extends Component {
 	render() {

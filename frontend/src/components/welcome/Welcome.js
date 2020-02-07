@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-import myImage from '../static/images/bg_1.jpg'
-import '../static/css/style.css'
-import WelcomeText from '../components/WelcomeText'
+import myImage from '../../static/images/bg_1.jpg'
+import WelcomeText from './WelcomeText'
 
-class HomeSlider extends Component {
+class Welcome extends Component {
   render(props) {
-    return (
-		
+    return (	
 		<div class="home-slider  owl-carousel" id={this.props.section}>
 	      <div class="slider-item ">
 	        <div class="container hero">
@@ -21,4 +19,4 @@ class HomeSlider extends Component {
   }
 }
 
-export default HomeSlider;
+export default Welcome;

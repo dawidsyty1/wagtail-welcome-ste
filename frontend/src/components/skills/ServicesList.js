@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import '../static/css/style.css'
-import '../static/css/flaticon.css'
-import '../static/css/animate.css'
+
 
 class Service extends Component {
 	render() {
