@@ -35,7 +35,7 @@ INSTALLED_APPS = [
     'wagtail.search',
     'wagtail.admin',
     'wagtail.core',
-
+    'wagtail.api.v2',
     'modelcluster',
     'taggit',
 
@@ -47,7 +47,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'corsheaders',
     'rest_framework',
-    'api',
     'pages',
     'pages.welcome',
     'pages.about_me',

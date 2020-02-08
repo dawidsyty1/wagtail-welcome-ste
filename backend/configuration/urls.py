@@ -6,7 +6,7 @@ from wagtail.core import urls as wagtail_urls
 from wagtail.documents import urls as wagtaildocs_urls
 
 from search import views as search_views
-from api import urls as api_urls
+from .routers import api_router
 
 urlpatterns = [
     url(r'^django-admin/', admin.site.urls),
@@ -15,9 +15,8 @@ urlpatterns = [
     url(r'^documents/', include(wagtaildocs_urls)),
 
     url(r'^search/$', search_views.search, name='search'),
-    url('api/v1/', include(api_urls)),
+    url('api/v1/', api_router.urls),
 ]
-
 
 if settings.DEBUG:
     from django.conf.urls.static import static
