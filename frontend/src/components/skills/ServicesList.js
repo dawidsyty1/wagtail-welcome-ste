@@ -18,13 +18,13 @@ class Service extends Component {
 				</div>
 			</div>
 		);
-  	}
+	}
 }
 const ServicesList = () => (
 	<div class="row">
-		<Service flaticon="flaticon-analysis" title="Explore" firstLine="Information" secondLine="Design" thirdLine="Branding"/>
-		<Service flaticon="flaticon-flasks" title="Create" firstLine="Information" secondLine="Design" thirdLine="Branding"/>
-		<Service flaticon="flaticon-ideas" title="Learn" firstLine="Information" secondLine="Design" thirdLine="Branding"/>
+		<Service flaticon="flaticon-analysis" title="Explore" firstLine="Information" secondLine="Design" thirdLine="Branding" />
+		<Service flaticon="flaticon-flasks" title="Create" firstLine="Information" secondLine="Design" thirdLine="Branding" />
+		<Service flaticon="flaticon-ideas" title="Learn" firstLine="Information" secondLine="Design" thirdLine="Branding" />
 	</div>
 );
 

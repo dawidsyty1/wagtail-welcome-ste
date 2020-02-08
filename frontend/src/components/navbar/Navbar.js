@@ -65,7 +65,7 @@ class Navbar extends Component {
             return null;
         }
         let table  = pages.map((page) => {
-            return <NavDropdown.Item href={"#" + page.slug}>{page.draft_title}</NavDropdown.Item>            
+            return <NavDropdown.Item href={"#" + page.meta.slug}>{page.title}</NavDropdown.Item>            
             
         });
         return table;
@@ -76,7 +76,7 @@ class Navbar extends Component {
             return null;
         }
         let table  = pages.map((page) => {
-            return <li class="nav-item"><a href={"#" + page.slug} class="nav-link"><span>{page.draft_title}</span></a></li>
+            return <li class="nav-item"><a href={"#" + page.meta.slug} class="nav-link"><span>{page.title}</span></a></li>
         });
         return table;
     };

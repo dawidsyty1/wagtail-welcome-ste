@@ -47,12 +47,14 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'corsheaders',
     'rest_framework',
+    'api',
     'pages',
     'pages.welcome',
     'pages.about_me',
     'pages.contact',
     'pages.service',
     'pages.skill',
+    'pages.single_page',
     'search',
 ]
 

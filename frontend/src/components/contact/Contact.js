@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import aboutImage from '../../static/images/about.jpg'
+import BaseSection from '../../containers/BaseSection'
 
 const ContactIntroduction = () => (
   <div class="row justify-content-center mb-5 pb-3">
@@ -40,7 +41,7 @@ const ContactImage = () => (
   </div>
 );
 
-class Contact extends Component {
+class Contact extends BaseSection {
   render() {
     return (
 		<div class="container ftco-section contact-section ftco-no-pb" id={this.props.section}>

@@ -50,6 +50,7 @@ function AboutMeFinishedProjects (props) {
 };
 
 class AboutMe extends Component {
+
   render() {
     return (
 		<div class="container ftco-about ftco-counter img ftco-section" id={this.props.section}>

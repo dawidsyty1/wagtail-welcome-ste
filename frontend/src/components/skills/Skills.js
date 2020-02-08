@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
+import BaseSection from '../../containers/BaseSection'
 import Skill from './Skill'
 import ServicesList from './ServicesList'
 
@@ -25,32 +26,32 @@ const SkillsSummary = () => (
 
 const SkillsList = () => (
 	<div class="row">
-		<Skill description="Software development" progressValue={70}/>
-		<Skill description="Architecture" progressValue={70}/>
-		<Skill description="Python" progressValue={70}/>
-		<Skill description="React" progressValue={30}/>
-		<Skill description="Cloud AWS/GCP" progressValue={30}/>
-		<Skill description="Docker" progressValue={60}/>
+		<Skill description="Software development" progressValue={70} />
+		<Skill description="Architecture" progressValue={70} />
+		<Skill description="Python" progressValue={70} />
+		<Skill description="React" progressValue={30} />
+		<Skill description="Cloud AWS/GCP" progressValue={30} />
+		<Skill description="Docker" progressValue={60} />
 	</div>
 );
 
 
-class Skills extends Component {
-  render() {
-    return (
-		<div class="container ftco-about ftco-counter img ftco-section" id={this.props.section}>
+class Skills extends BaseSection {
+	render() {
+		return (
+			<div class="container ftco-about ftco-counter img ftco-section" id={this.props.section}>
 
-			<SkillsIntroduction/>
+				<SkillsIntroduction />
 
-			<SkillsList/>
+				<SkillsList />
 
-			<SkillsSummary/>
+				<SkillsSummary />
 
-			<ServicesList/>
+				<ServicesList />
 
-		</div>
-    );
-  }
+			</div>
+		);
+	}
 }
 
 export default Skills;
