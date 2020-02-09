@@ -14,49 +14,49 @@ const ContactIntroduction = () => (
 
 const ContactForm = () => (
   <div class="col-md-6 order-md-last d-flex">
-			
+
     <form action="#" class="bg-light p-4 p-md-5 contact-form">
       <div class="form-group">
-        <input type="text" class="form-control" placeholder="Your Name"/>
+        <input type="text" class="form-control" placeholder="Your Name" />
       </div>
       <div class="form-group">
-        <input type="text" class="form-control" placeholder="Your Email"/>
+        <input type="text" class="form-control" placeholder="Your Email" />
       </div>
       <div class="form-group">
-        <input type="text" class="form-control" placeholder="Subject"/>
+        <input type="text" class="form-control" placeholder="Subject" />
       </div>
       <div class="form-group">
         <textarea name="" id="" cols="30" rows="7" class="form-control" placeholder="Message"></textarea>
       </div>
       <div class="form-group">
-        <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5"/>
+        <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5" />
       </div>
-    </form>  
-    </div>
+    </form>
+  </div>
 );
 
 const ContactImage = () => (
   <div class="col-md-6 d-flex">
-    <img class="img" src={aboutImage} alt="My Face"/>
+    <img class="img" src={aboutImage} alt="My Face" />
   </div>
 );
 
 class Contact extends BaseSection {
-  render() {
+  getComponent = () => {
     return (
-		<div class="container ftco-section contact-section ftco-no-pb" id={this.props.section}>
-        <ContactIntroduction/>
+      <div class="container ftco-section contact-section ftco-no-pb" id={this.props.section}>
+        <ContactIntroduction />
 
 
         <div class="row no-gutters block-9">
 
-            <ContactForm/>
-            <ContactImage/>
+          <ContactForm />
+          <ContactImage />
         </div>
       </div>
-	  
-    );
-  }
+    )
+  };
+
 }
 
 export default Contact;

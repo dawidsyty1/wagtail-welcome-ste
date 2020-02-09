@@ -3,13 +3,12 @@ from wagtail.core.models import Page
 from wagtail.admin.edit_handlers import FieldPanel, InlinePanel, StreamFieldPanel
 from wagtail.search import index
 from wagtail.api import APIField
-
+from modelcluster.fields import ParentalKey
 from pages.single_page.models import SinglePage
 
 
 # Create your models here.
 class AboutPage(Page):
-    subpage_types = []
     parent_page_types = [SinglePage]
 
     intro = models.CharField(max_length=250)
@@ -31,4 +30,32 @@ class AboutPage(Page):
         FieldPanel('body_1'),
         FieldPanel('body_2'),
 
+    ]
+
+
+class AboutServicesPage(Page):
+    subpage_types = []
+    parent_page_types = [AboutPage]
+    description = models.CharField(max_length=20)
+
+    api_fields = [
+        APIField('description'),
+    ]
+    content_panels = Page.content_panels + [
+        FieldPanel('description'),
+    ]
+
+
+class AboutFinishedProjectsPage(Page):
+    subpage_types = []
+    parent_page_types = [AboutPage]
+
+    value = models.IntegerField()
+    description = models.CharField(max_length=20)
+
+    api_fields = [
+        APIField('description'),
+    ]
+    content_panels = Page.content_panels + [
+        FieldPanel('description'),
     ]

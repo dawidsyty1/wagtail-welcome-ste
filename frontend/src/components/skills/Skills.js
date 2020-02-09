@@ -37,7 +37,7 @@ const SkillsList = () => (
 
 
 class Skills extends BaseSection {
-	render() {
+	getComponent = () => {
 		return (
 			<div class="container ftco-about ftco-counter img ftco-section" id={this.props.section}>
 

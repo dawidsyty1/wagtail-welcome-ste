@@ -18,13 +18,14 @@ class Pages extends Component {
         }
 
         let table = pages.map((page) => {
+            console.log(page.meta.slug)
             if (page.meta.type === "welcome.WelcomePage") {
                 return <Welcome section={page.meta.slug} id={page.id} />
-            } else if (page.page_type === "about_me.AboutPage") {
+            } else if (page.meta.type === "about_me.AboutPage") {
                 return <AboutMe section={page.meta.slug} id={page.id}/>
-            } else if (page.page_type === "skill.SkillPage") {
+            } else if (page.meta.type === "skill.SkillPage") {
                 return <Skills section={page.meta.slug} id={page.id}/>
-            } else if (page.page_type === "contact.ContactPage") {
+            } else if (page.meta.type === "contact.ContactPage") {
                 return <Contact section={page.meta.slug} id={page.id}/>
             }
             return ""
