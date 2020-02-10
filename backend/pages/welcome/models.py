@@ -13,13 +13,17 @@ class WelcomePage(Page):
     second_line = models.CharField(max_length=250)
     third_line = models.CharField(max_length=250)
     button_name = models.CharField(max_length=250)
-    # image = models.CharField(max_length=250)
+    image = models.ForeignKey(
+        'wagtailimages.Image', on_delete=models.DO_NOTHING, related_name='welcome_main_image', default="", null=True,
+        blank=True
+    )
 
     api_fields = [
         APIField('first_line'),
         APIField('second_line'),
         APIField('third_line'),
         APIField('button_name'),
+        APIField('image'),
     ]
 
     content_panels = Page.content_panels + [
@@ -27,4 +31,5 @@ class WelcomePage(Page):
         FieldPanel('second_line'),
         FieldPanel('third_line'),
         FieldPanel('button_name'),
+        FieldPanel('image'),
     ]
